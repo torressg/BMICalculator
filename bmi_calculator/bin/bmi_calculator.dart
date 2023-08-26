@@ -14,7 +14,7 @@ void getName() {
   print("Digite seu nome:");
   name = stdin.readLineSync(encoding: utf8);
   RegExp regex = RegExp(r"^[a-zA-Z\s]+$");
-  if(regex.hasMatch(name)) {
+  if (regex.hasMatch(name)) {
     nameConverted = name.toString();
   } else {
     print('Insira apenas letras. Exemplo: Maria da Silva');
@@ -44,11 +44,19 @@ void getWeight() {
   }
 }
 
+void addPerson() {
+  try {
+    dynamic firstPerson =
+        Person(nameConverted, heightConverted, weightConverted);
+    print(firstPerson);
+  } catch (e) {
+    print("Ocorreu um erro, contate o administrador.");
+  }
+}
+
 void main() {
   getName();
-  print(nameConverted);
   getHeight();
-  print(heightConverted);
   getWeight();
-  print(weightConverted);
+  addPerson();
 }
