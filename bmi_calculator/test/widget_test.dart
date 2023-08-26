@@ -6,8 +6,10 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 
-import '../bin/bmi_calculator.dart';
+import '../bin/bmi_calculator.dart' as app;
 
-void main() {
+void main(
+  
+) {
 
 }
