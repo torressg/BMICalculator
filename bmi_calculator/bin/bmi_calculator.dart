@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:math';
 
 import 'package:bmi_calculator/classes/Person.dart';
 
@@ -9,6 +10,7 @@ dynamic height;
 double heightConverted = 0;
 dynamic weight;
 double weightConverted = 0;
+double BMI = 0;
 
 void getName() {
   print("Digite seu nome:");
@@ -54,9 +56,17 @@ void addPerson() {
   }
 }
 
+void calculateBMI() {
+  num heightPow = pow(heightConverted, 2);
+  BMI = weightConverted / heightPow;
+    print(BMI);
+
+}
+
 void main() {
   getName();
   getHeight();
   getWeight();
+  calculateBMI();
   addPerson();
 }
