@@ -28,8 +28,13 @@ void catchName() {
 void catchHeight() {
   print("Digite sua altura, em metros:");
   height = stdin.readLineSync(encoding: utf8);
+
   try {
     heightConverted = double.parse(height);
+    if (heightConverted < 0) {
+      print('Números negativos não são permitidos. Exemplo: 1.83');
+      catchHeight();
+    }
   } catch (e) {
     print('Insira apenas números. Exemplo: 1.83');
     catchHeight();
@@ -41,6 +46,10 @@ void catchWeight() {
   weight = stdin.readLineSync(encoding: utf8);
   try {
     weightConverted = double.parse(weight);
+    if (weightConverted < 0) {
+      print('Números negativos não são permitidos. Exemplo: 1.83');
+      catchWeight();
+    }
   } catch (e) {
     print('Insira apenas números. Exemplo: 60.5');
     catchWeight();
@@ -58,7 +67,6 @@ void addPerson() {
 void calculateBMI() {
   num heightPow = pow(heightConverted, 2);
   BMI = weightConverted / heightPow;
-  print(BMI);
 }
 
 void responseToUser(double bmi) {
